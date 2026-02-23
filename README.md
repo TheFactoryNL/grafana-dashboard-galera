@@ -1,6 +1,6 @@
 # Galera Cluster Grafana Dashboard
 
-A comprehensive Grafana dashboard for monitoring MariaDB Galera clusters in production. Focuses on cluster health, replication performance, query metrics, and resource utilization with clearly defined alert priorities.
+A comprehensive Grafana dashboard for monitoring MariaDB Galera clusters in production. Focuses on cluster health, replication performance, query metrics, and resource utilization.
 
 ![alt](screenshots/SCR-20260223-nfva.png)
 ![alt](screenshots/SCR-20260223-nfxn.png)
@@ -98,18 +98,17 @@ Verify your exporters are producing these metrics before importing.
 
 ## Dashboard Layout
 
-| Row               | Visibility     | Contents                                                      |
-| ----------------- | -------------- | ------------------------------------------------------------- |
-| Cluster Health    | Always visible | Ready status, local state, cluster size, flow control         |
-| Replication       | Always visible | Receive queue, send queue, cert failures, replication latency |
-| Query Performance | Always visible | QPS by type, QPS per node, response time, slow queries        |
-| Connections       | Always visible | Connection usage %, aborted connections, threads running      |
-| Operational       | Collapsed      | CPU, RAM, disk usage per node, network traffic, logs          |
+| Row               | Contents                                                      |
+| ----------------- | ------------------------------------------------------------- |
+| Cluster Health    | Ready status, local state, cluster size, flow control         |
+| Replication       | Receive queue, send queue, cert failures, replication latency |
+| Query Performance | QPS by type, QPS per node, response time, slow queries        |
+| Connections       | Connection usage %, aborted connections, threads running      |
+| Operational       | CPU, RAM, disk usage per node, network traffic, logs          |
 
 ## Tips
 
 - **Shared crosshair** is enabled so hovering on one panel shows the timestamp across all panels for easy correlation.
-- **Consistent node colors** — each node uses a fixed color across all panels. If you add nodes, assign consistent colors via field overrides.
 - All time series panels use **threshold regions** to visually indicate healthy (green), warning (yellow), and critical (red) zones.
 
 ## Contributing
@@ -118,4 +117,4 @@ Issues and pull requests are welcome. If you've tested this on a different Maria
 
 ## License
 
-MIT
+Apache 2.0 License. See [LICENSE](LICENSE) for details.
